@@ -44,10 +44,6 @@ $(function () {
 <div class="compute">
 <script type="text/x-sage">
 
-var( 't' )
-
-var( 't' )
-
 @interact( layout=[ ['x_func', 'y_func'], ['lower', 'upper', 'num'] ])
 def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", width = 20 ), 
         y_func = input_box( default = sin(t), label = "y(t) = ", width = 20 ), 
@@ -56,8 +52,8 @@ def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", widt
         upper = input_box( default = 2*pi, label = "t max", width = 5 ) ):
     
     # Set up the functions
-    x(t) = x_func(t)
-    y(t) = y_func(t)
+    x = x_func.function(t)
+    y = y_func.function(t)
     
     # Define a distance function inside the main function
     def distance2d( (x1, y1), (x2, y2) ):
@@ -76,7 +72,7 @@ def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", widt
         seg_length += distance2d( ( x(min), y(min) ), ( x(max), y(max) ) )
     
     # Graph the actual function, combine, and show together
-    graph_f = parametric_plot( ( x(t), y(t) ), (t, lower, upper), legend_label = "Original curve", color = 'red')
+    graph_f = parametric_plot( ( x, y ), (lower, upper), legend_label = "Original curve", color = 'red')
     graph = graph_f + segments
     graph.show()
     
@@ -96,6 +92,6 @@ def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", widt
 </div>
 
 <hr>
-Last modified on July 24th, 2017.
+Last modified on July 26th, 2017.
 </body>
 </html>
