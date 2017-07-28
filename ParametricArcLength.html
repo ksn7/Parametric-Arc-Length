@@ -44,6 +44,8 @@ $(function () {
 <div class="compute">
 <script type="text/x-sage">
 
+var('t')
+
 @interact( layout=[ ['x_func', 'y_func'], ['lower', 'upper', 'num'] ])
 def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", width = 20 ), 
         y_func = input_box( default = sin(t), label = "y(t) = ", width = 20 ), 
@@ -92,6 +94,6 @@ def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", widt
 </div>
 
 <hr>
-Last modified on July 26th, 2017.
+Last modified on July 28th, 2017.
 </body>
 </html>
