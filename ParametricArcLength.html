@@ -44,14 +44,14 @@ $(function () {
 <div class="compute">
 <script type="text/x-sage">
 
-var('t')
+var( 't' )
 
 @interact( layout=[ ['x_func', 'y_func'], ['lower', 'upper', 'num'] ])
-def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", width = 20 ), 
-        y_func = input_box( default = sin(t), label = "y(t) = ", width = 20 ), 
-        num = input_box( default = 4, label = "n", width = 5 ), 
-        lower = input_box( default = 0, label = "t min", width = 5), 
-        upper = input_box( default = 2*pi, label = "t max", width = 5 ) ):
+def parametric_al( x_func = input_box( default = cos(t), label = "$x(t) = $", width = 20 ), 
+        y_func = input_box( default = sin(t), label = "$y(t) = $", width = 20 ), 
+        num = input_box( default = 4, label = "$n$", width = 5 ), 
+        lower = input_box( default = 0, label = "$t_{min}$", width = 5), 
+        upper = input_box( default = 2*pi, label = "$t_{max}$", width = 5 ) ):
     
     # Set up the functions
     x = x_func.function(t)
@@ -88,12 +88,12 @@ def parametric_al( x_func = input_box( default = cos(t), label = "x(t) = ", widt
         j += 1
     
     # Print the findings
-    pretty_print( "The approximate length of the arc based on the segments is " + str(seg_length) + ".\nThe actual length of the arc, accurate to " + str(j) + " decimal places, is " + str(length) + "." )
+    pretty_print( "The approximate length of the arc based on the segments is %6.7f" %seg_length + ".\nThe actual length of the arc, accurate to " + str(j) + " decimal places, is " + str(length) + "." )
 
 </script>
 </div>
 
 <hr>
-Last modified on July 28th, 2017.
+Last modified on August 17th, 2017.
 </body>
 </html>
